@@ -5,7 +5,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="modern.css" />
   <!-- Primary Meta Tags -->
   <title>AI Tools Hub - Professional AI Tools Directory</title>
   <meta name="title" content="AI Tools Hub - Professional AI Tools Directory" />
@@ -69,7 +68,7 @@
         "author": {
           "@type": "Person",
           "name": "Arshdeep Singh",
-          "url": "https://arshdeepgrover.dev"
+          "url": "https://arshdeepsingh.info"
         },
         "publisher": {
           "@type": "Organization",
@@ -130,8 +129,8 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 
   <!-- Preload critical resources -->
-  <link rel="preload" href="data/links.json" as="fetch" crossorigin="anonymous" />
-  <link rel="preload" href="data/contributors.json" as="fetch" crossorigin="anonymous" />
+  <link rel="preload" href="links.json" as="fetch" crossorigin="anonymous" />
+  <link rel="preload" href="contributors.json" as="fetch" crossorigin="anonymous" />
 
   <!-- DNS prefetch for external domains -->
   <link rel="dns-prefetch" href="//fonts.googleapis.com" />
@@ -426,31 +425,6 @@
       transform: scale(1.05);
       border-color: #3b82f6;
       box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
-    }
-
-    /* Shown instead of a broken image when an avatar URL is missing or fails
-       to load. Reuses the avatar size classes so dimensions stay identical. */
-    .avatar-initial-fallback {
-      box-sizing: border-box;
-      flex-shrink: 0;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #3b82f6 0%, #7c3aed 100%);
-      color: #ffffff;
-      font-weight: 700;
-      line-height: 1;
-      text-transform: uppercase;
-      user-select: none;
-      overflow: hidden;
-    }
-
-    .contributor-avatar-modern.avatar-initial-fallback {
-      font-size: 20px;
-    }
-
-    .modal-avatar.avatar-initial-fallback {
-      font-size: 32px;
     }
 
     .contributor-info {
@@ -945,10 +919,6 @@
         height: 40px;
       }
 
-      .contributor-avatar-modern.avatar-initial-fallback {
-        font-size: 17px;
-      }
-
       .text-blue-600 {
         font-size: 0.75rem !important;
       }
@@ -1250,7 +1220,6 @@
   <script>
     (function () {
       try {
-        document.documentElement.classList.add('js-ready');
         var stored = localStorage.getItem('theme');
         var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
         var theme = stored === 'light' || stored === 'dark' ? stored : (prefersDark ? 'dark' : 'light');
@@ -1269,18 +1238,16 @@
 
 <body class="font-sans"
   style="background-color: var(--bg-primary); color: var(--text-primary); transition: background-color 0.3s ease, color 0.3s ease;">
-  <!-- Scroll progress bar -->
-  <div id="scroll-progress" aria-hidden="true"></div>
-
   <!-- Navigation -->
-  <nav id="main-nav" class="nav-glass sticky top-0 z-50">
+  <nav class="shadow-lg sticky top-0 z-50"
+    style="background-color: var(--nav-bg); box-shadow: 0 1px 3px 0 var(--nav-shadow);">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-around items-center h-16">
         <!-- Logo -->
         <a href="index.html">
           <div class="flex items-center space-x-3">
             <div
-              class="logo-badge w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+              class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
               <i class="fas fa-robot text-white text-lg"></i>
             </div>
             <div>
@@ -1293,13 +1260,13 @@
         <!-- Navigation Links -->
         <div class="hidden lg:flex items-center space-x-8">
           <a href="#tools"
-            class="nav-link-underline font-medium transition-colors duration-300 text-[var(--text-secondary)] hover:text-[var(--accent-color)]">Tools</a>
+            class="font-medium transition-colors duration-300 text-[var(--text-secondary)] hover:text-[var(--accent-color)]">Tools</a>
           <a href="#categories"
-            class="nav-link-underline font-medium transition-colors duration-300 text-[var(--text-secondary)] hover:text-[var(--accent-color)]">Categories</a>
+            class="font-medium transition-colors duration-300 text-[var(--text-secondary)] hover:text-[var(--accent-color)]">Categories</a>
           <a href="#contributors"
-            class="nav-link-underline font-medium transition-colors duration-300 text-[var(--text-secondary)] hover:text-[var(--accent-color)]">Contributors</a>
+            class="font-medium transition-colors duration-300 text-[var(--text-secondary)] hover:text-[var(--accent-color)]">Contributors</a>
           <a href="#about"
-            class="nav-link-underline font-medium transition-colors duration-300 text-[var(--text-secondary)] hover:text-[var(--accent-color)]">About</a>
+            class="font-medium transition-colors duration-300 text-[var(--text-secondary)] hover:text-[var(--accent-color)]">About</a>
 
 
         </div>
@@ -1378,29 +1345,27 @@
   </nav>
 
   <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="hero-bg" aria-hidden="true">
-      <div class="hero-grid"></div>
-      <div class="hero-orb orb-1"></div>
-      <div class="hero-orb orb-2"></div>
-    </div>
-
-    <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="hero-title reveal">
-        Discover the Best <span class="hero-gradient-text">AI Tools</span>
+  <section class="gradient-bg text-white py-12">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-3xl md:text-5xl font-bold mb-4">
+        Discover the Best
+        <span class="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+          AI Tools
+        </span>
       </h1>
-
-      <p class="hero-subtitle reveal">
-        A curated, community-driven directory of 100+ professional AI tools.
+      <p class="text-lg md:text-xl mb-6 text-blue-100 max-w-2xl mx-auto">
+        A curated collection of professional AI tools for developers, designers, and creators. Open source and
+        community-driven.
       </p>
-
-      <div class="hero-cta reveal">
-        <a href="#tools" class="btn-primary-glow">
-          Explore Tools <i class="fas fa-arrow-right"></i>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="#tools"
+          class="bg-white text-blue-600 px-6 py-2.5 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+          Explore Tools
         </a>
         <a href="https://github.com/ArshdeepGrover/ai-tools-manager" target="_blank"
-          class="btn-ghost-glass" id="hero-github-button">
-          <i class="fab fa-github"></i> Contribute
+          class="border-2 border-white text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors"
+          id="hero-github-button">
+          Contribute
         </a>
       </div>
     </div>
@@ -1409,19 +1374,18 @@
   <!-- Category Filter Section -->
   <section id="categories" class="py-10" style="background-color: var(--bg-secondary);">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-8 reveal">
-        <span class="section-eyebrow">Explore</span>
-        <h2 class="text-3xl font-bold mb-3 section-title-underline" style="color: var(--text-primary);">
+      <div class="text-center mb-8">
+        <h2 class="text-2xl font-bold mb-2" style="color: var(--text-primary);">
           Browse by Category
         </h2>
-        <p class="max-w-xl mx-auto text-sm mt-5" style="color: var(--text-secondary);">
+        <p class="max-w-xl mx-auto text-sm" style="color: var(--text-secondary);">
           Find the perfect AI tools for your specific needs. Filter by category to discover tools tailored to your
           workflow.
         </p>
       </div>
 
       <!-- Search + Category Filter (replaces buttons) -->
-      <div class="max-w-3xl mx-auto reveal">
+      <div class="max-w-3xl mx-auto">
         <div class="flex flex-col md:flex-row gap-4 items-stretch">
           <!-- Search Bar -->
           <div class="flex-1">
@@ -1449,16 +1413,12 @@
           </div>
         </div>
       </div>
-
-      <!-- Category quick-filter chips -->
-      <!-- <div id="category-chips" class="category-chips reveal"></div> -->
     </div>
   </section>
 
   <!-- Tools Section -->
   <section id="tools" class="py-10" style="background-color: var(--bg-primary);">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div id="results-count" class="results-count" aria-live="polite"></div>
       <main id="main-content">
         <!-- AI Tools will be loaded here -->
       </main>
@@ -1470,13 +1430,13 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Repo states -->
 
-      <div class="flex justify-center items-center flex-col mb-6 reveal">
+      <div class="flex justify-center items-center flex-col mb-6">
         <div class="flex justify-center mb-4 px-2 ">
-          <h2 class="text-3xl font-bold section-title-underline" style="color: var(--text-primary)">
+          <h2 class="text-3xl font-bold" style="color: var(--text-primary)">
             Repository States
           </h2>
         </div>
-        <div class="mt-4">
+        <div>
           <div
             class="flex flex-row gap-2 md:gap-8 p-4 justify-center item-center px-4 md:px-10 py-6 rounded-2xl shadow-lg border border-gray-700">
             <!-- stars count -->
@@ -1508,12 +1468,11 @@
       </div>
 
       <!-- Header -->
-      <div class="text-center mb-8 reveal">
-        <span class="section-eyebrow">The People</span>
-        <h2 class="text-3xl font-bold mb-3 section-title-underline" style="color: var(--text-primary);">
+      <div class="text-center mb-8">
+        <h2 class="text-2xl font-bold mb-2" style="color: var(--text-primary);">
           Our Contributors
         </h2>
-        <p class="max-w-xl mx-auto text-sm mt-5" style="color: var(--text-secondary);">
+        <p class="max-w-xl mx-auto text-sm" style="color: var(--text-secondary);">
           Meet the
           <span id="total-contributors-text" class="text-blue-600 font-semibold">-</span>
           amazing people who help maintain and grow this collection of AI tools.
@@ -1521,7 +1480,7 @@
       </div>
 
       <!-- Contributors Search -->
-      <div class="mb-6 reveal">
+      <div class="mb-6">
         <input type="text" id="contributors-search" placeholder="Search contributors by name..."
           class="w-full px-4 py-3 rounded-lg border-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 shadow-sm transition-colors"
           style="background-color: var(--card-bg); color: var(--text-primary); border-color: var(--border-color);" />
@@ -1561,22 +1520,21 @@
   <!-- About Section -->
   <section id="about" class="py-10" style="background-color: var(--bg-primary);">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-8 reveal">
-        <span class="section-eyebrow">Behind the Project</span>
-        <h2 class="text-3xl font-bold mb-3 section-title-underline" style="color: var(--text-primary);">About</h2>
-        <p class="max-w-xl mx-auto text-sm mt-5" style="color: var(--text-secondary);">
+      <div class="text-center mb-8">
+        <h2 class="text-2xl font-bold mb-2" style="color: var(--text-primary);">About</h2>
+        <p class="max-w-xl mx-auto text-sm" style="color: var(--text-secondary);">
           Learn more about the creator and the community behind this project.
         </p>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <!-- Left Column - Created by -->
-        <div class="rounded-2xl shadow-lg p-6 reveal reveal-left" style="background-color: var(--card-bg);">
+        <div class="rounded-2xl shadow-lg p-6" style="background-color: var(--card-bg);">
           <div class="text-center mb-4">
             <h3 class="text-xl font-bold mb-2" style="color: var(--text-primary);">Created by</h3>
           </div>
           <div class="flex flex-col items-center space-y-4">
-            <img src="https://www.arshdeepgrover.dev/images/arshdeep-singh.png" alt="Arshdeep Singh"
+            <img src="https://www.arshdeepsingh.info/images/arshdeep-singh.png" alt="Arshdeep Singh"
               class="w-32 h-32 rounded-full object-cover" />
             <div class="text-center">
               <h4 class="text-xl font-bold mb-2" style="color: var(--text-primary);">
@@ -1604,7 +1562,7 @@
                   <i class="fab fa-medium"></i>
                   <span>Medium</span>
                 </a>
-                <a href="https://arshdeepgrover.dev" target="_blank"
+                <a href="https://arshdeepsingh.info" target="_blank"
                   class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors flex items-center space-x-2">
                   <i class="fas fa-globe"></i>
                   <span>Website</span>
@@ -1615,7 +1573,7 @@
         </div>
 
         <!-- Right Column - Community -->
-        <div class="rounded-2xl shadow-lg p-6 reveal reveal-right" style="background-color: var(--card-bg);">
+        <div class="rounded-2xl shadow-lg p-6" style="background-color: var(--card-bg);">
           <div class="text-center mb-4">
             <h3 class="text-xl font-bold mb-2" style="color: var(--text-primary);">Community</h3>
           </div>
@@ -1655,211 +1613,17 @@
           </div>
         </div>
       </div>
-<!-- </div> -->
-</section>
-
-<!-- ================= AI CHAT AGENT ================= -->
-<!-- <script src="https://js.puter.com/v2/"></script>
-
-<style>
-  /* ================= CHAT UI ================= */
-  .ai-msg-user {
-    background: #6e8efb;
-    padding: 10px 12px;
-    border-radius: 14px;
-    align-self: flex-end;
-    color: white;
-    max-width: 80%;
-  }
-
-  .ai-msg-bot {
-    background: #2d3446;
-    padding: 10px 12px;
-    border-radius: 14px;
-    align-self: flex-start;
-    color: #e5e7eb;
-    max-width: 80%;
-    font-size: 14px;
-  }
-
-  /* ================= INLINE THINKING ================= */
-  .ai-thinking {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .cloud {
-    display: inline-flex;
-    gap: 4px;
-  }
-
-  .cloud span {
-    width: 6px;
-    height: 6px;
-    background: #6e8efb;
-    border-radius: 50%;
-    opacity: 0.3;
-    animation: cloudPulse 1.2s ease-in-out infinite;
-  }
-
-  .cloud span:nth-child(2) { animation-delay: .15s; }
-  .cloud span:nth-child(3) { animation-delay: .3s; }
-
-  @keyframes cloudPulse {
-    0% { transform: translateY(0); opacity: .3; }
-    50% { transform: translateY(-4px); opacity: 1; }
-    100% { transform: translateY(0); opacity: .3; }
-  }
-
-  .thinking-text {
-    color: #9ca3af;
-    font-size: 13px;
-  }
-</style>
-
-<div id="ai-chat-box" style="position: fixed; bottom: 80px; left: 20px; z-index: 999999; font-family: system-ui;">
-  <div id="ai-window"
-    style="display:none; width:320px; height:450px; background:#0f172a; border-radius:16px; flex-direction:column; box-shadow:0 10px 30px rgba(0,0,0,.5); overflow:hidden;">
-
-    <div style="background:#6e8efb; color:white; padding:14px; font-weight:600; display:flex; justify-content:space-between;">
-      <span>🤖 AI Scout Agent</span>
-      <button onclick="toggleAI()" style="background:none;border:none;color:white;font-size:20px;cursor:pointer">×</button>
     </div>
+  </section>
 
-    <div id="ai-messages" style="flex:1; padding:14px; overflow-y:auto; display:flex; flex-direction:column; gap:10px;">
-      <div class="ai-msg-bot">Hello! Ask me for any tool 🚀</div>
-    </div>
-
-    <div style="padding:10px; border-top:1px solid #1e293b; display:flex; gap:6px;">
-      <input id="ai-input" placeholder="Ask something..."
-        style="flex:1; padding:10px; border-radius:8px; border:1px solid #334155; background:#020617; color:white;">
-      <button id="ai-send-btn"
-        style="padding:10px 14px; background:#6e8efb; border:none; border-radius:8px; color:white;">
-        Send
-      </button>
-    </div>
-  </div>
-
-  <button onclick="toggleAI()"
-    style="width:60px;height:60px;border-radius:50%;background:#6e8efb;border:none;color:white;font-size:28px;cursor:pointer;">
-    🤖
-  </button>
-</div>
-
-<script>
-  function toggleAI() {
-    const w = document.getElementById('ai-window');
-    w.style.display = (!w.style.display || w.style.display === 'none') ? 'flex' : 'none';
-  }
-
-  function cleanText(text) {
-    return text
-      .replace(/\*\*/g, '')
-      .replace(/^\s*[-•]\s*/gm, '')
-      .trim();
-  }
-
-  async function askAgent() {
-    const input = document.getElementById('ai-input');
-    const box = document.getElementById('ai-messages');
-    const query = input.value.trim();
-    if (!query) return;
-
-    box.innerHTML += `<div class="ai-msg-user">${query}</div>`;
-    input.value = '';
-
-    const id = "bot-" + Date.now();
-    box.innerHTML += `
-      <div id="${id}" class="ai-msg-bot">
-        <span class="ai-thinking">
-          <span class="thinking-text">Thinking…</span>
-          <span class="cloud"><span></span><span></span><span></span></span>
-        </span>
-      </div>
-    `;
-    box.scrollTop = box.scrollHeight;
-
-    try {
-      const tools = await (await fetch('data/links.json')).json();
-      const ai = await puter.ai.chat(`You are the AI Scout. Recommend clearly for: "${query}"`,
-        { model: 'gpt-4o-mini' }
-      );
-      document.getElementById(id).innerText = cleanText(ai.message.content);
-    } catch {
-      document.getElementById(id).innerText = "⚠️ Error";
-    }
-
-    box.scrollTop = box.scrollHeight;
-  }
-
-  document.getElementById('ai-send-btn').onclick = askAgent;
-  document.getElementById('ai-input').addEventListener('keydown', e => {
-    if (e.key === 'Enter') askAgent();
-  });
-</script>
-
- -->
-
-
-  <!--Chat AGENT -->
-  <!-- <script src="https://js.puter.com/v2/"></script>
-  <div id="ai-chat-box" style="position: fixed; bottom: 80px; left: 20px; z-index: 999999; font-family: sans-serif;">
-    <div id="ai-window" style="display: none; width: 320px; height: 450px; background: #1a1f2c; border: 1px solid #3d4455; border-radius: 15px; flex-direction: column; box-shadow: 0 10px 30px rgba(0,0,0,0.5); overflow: hidden;">
-      <div style="background: #6e8efb; color: white; padding: 15px; font-weight: bold; display: flex; justify-content: space-between;">
-        <span>AI Scout Agent</span>
-        <button onclick="document.getElementById('ai-window').style.display='none'" style="background:none; border:none; color:white; cursor:pointer; font-size:20px;">×</button>
-      </div>
-      <div id="ai-messages" style="flex: 1; padding: 15px; overflow-y: auto; color: #eee; font-size: 14px; display: flex; flex-direction: column; gap: 10px;">
-        <div style="background: #2d3446; padding: 10px; border-radius: 10px;">Hello! I am your AI Agent. Ask me for any tool in our project!</div>
-      </div>
-      <div style="padding: 10px; border-top: 1px solid #333; display: flex; gap: 5px;">
-        <input type="text" id="ai-input" placeholder="Type a problem..." style="flex: 1; padding: 10px; border-radius: 5px; border: 1px solid #444; background: #0f172a; color: white;">
-        <button id="ai-send-btn" style="padding: 10px; background: #6e8efb; color: white; border: none; border-radius: 5px; cursor: pointer;">Send</button>
-      </div>
-    </div>
-    <button id="ai-toggle" onclick="var w=document.getElementById('ai-window'); w.style.display = (w.style.display==='none'?'flex':'none')" style="width: 60px; height: 60px; border-radius: 50%; background: #6e8efb; border: none; color: white; font-size: 30px; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">🤖</button>
-  </div>
-
-  <script>
-    async function askAgent() {
-      const input = document.getElementById('ai-input');
-      const box = document.getElementById('ai-messages');
-      if (!input || !box) return;
-      const query = input.value.trim();
-      if (!query) return;
-
-      box.innerHTML += `<div style="background: #6e8efb; padding: 10px; border-radius: 10px; align-self: flex-end; color: white; margin-bottom: 10px;">${query}</div>`;
-      input.value = '';
-
-      const id = "bot-" + Date.now();
-      box.innerHTML += `<div id="${id}" style="background: #2d3446; padding: 10px; border-radius: 10px; align-self: flex-start; color: white; margin-bottom: 10px;">⏳ Thinking...</div>`;
-      box.scrollTop = box.scrollHeight;
-
-      try {
-        const response = await fetch('data/links.json');
-        if (!response.ok) throw new Error("JSON file not found");
-        const tools = await response.json();
-        const aiResponse = await puter.ai.chat(`You are the AI Scout for this tool collection: ${JSON.stringify(tools).substring(0, 8000)}. Recommend a tool for: "${query}"`, { model: 'gpt-4o-mini' });
-        document.getElementById(id).innerText = aiResponse.message.content;
-      } catch (e) {
-        document.getElementById(id).innerText = "Error: " + e.message;
-      }
-      box.scrollTop = box.scrollHeight;
-    }
-    document.addEventListener('DOMContentLoaded', () => {
-      const btn = document.getElementById('ai-send-btn');
-      if (btn) btn.onclick = askAgent;
-    });
-  </script> -->
-
-  <!-- MASTER BRANCH FOOTER & WIDGETS -->
+  <!-- Footer -->
   <footer class="bg-gray-900 text-white py-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
         <div class="col-span-1 md:col-span-2">
           <div class="flex items-center space-x-3 mb-4">
-            <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+            <div
+              class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
               <i class="fas fa-robot text-white text-lg"></i>
             </div>
             <div>
@@ -1867,27 +1631,47 @@
               <p class="text-gray-400 text-sm">Professional Directory</p>
             </div>
           </div>
-          <p class="text-gray-400 mb-4">Discover, explore, and contribute to the most comprehensive collection of AI tools for professionals.</p>
+          <p class="text-gray-400 mb-4">
+            Discover, explore, and contribute to the most comprehensive
+            collection of AI tools for professionals.
+          </p>
           <div class="flex space-x-4">
-            <a href="https://github.com/ArshdeepGrover/ai-tools-manager" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+            <a href="https://github.com/ArshdeepGrover/ai-tools-manager" target="_blank"
+              class="text-gray-400 hover:text-white transition-colors">
               <i class="fab fa-github text-xl"></i>
             </a>
           </div>
         </div>
+
         <div>
           <h4 class="font-semibold mb-4">Quick Links</h4>
           <ul class="space-y-2 text-gray-400">
-            <li><a href="#tools" class="hover:text-white transition-colors">Browse Tools</a></li>
-            <li><a href="#categories" class="hover:text-white transition-colors">Categories</a></li>
-            <li><a href="#contributors" class="hover:text-white transition-colors">Contributors</a></li>
-            <li><a href="#about" class="hover:text-white transition-colors">About</a></li>
+            <li>
+              <a href="#tools" class="hover:text-white transition-colors">Browse Tools</a>
+            </li>
+            <li>
+              <a href="#categories" class="hover:text-white transition-colors">Categories</a>
+            </li>
+            <li>
+              <a href="#contributors" class="hover:text-white transition-colors">Contributors</a>
+            </li>
+            <li>
+              <a href="#about" class="hover:text-white transition-colors">About</a>
+            </li>
           </ul>
         </div>
+
         <div>
           <h4 class="font-semibold mb-4">Community</h4>
           <ul class="space-y-2 text-gray-400">
-            <li><a href="https://github.com/ArshdeepGrover/ai-tools-manager" target="_blank" class="hover:text-white transition-colors">GitHub</a></li>
-            <li><a href="https://github.com/ArshdeepGrover/ai-tools-manager/issues" target="_blank" class="hover:text-white transition-colors">Report Issues</a></li>
+            <li>
+              <a href="https://github.com/ArshdeepGrover/ai-tools-manager" target="_blank"
+                class="hover:text-white transition-colors">GitHub</a>
+            </li>
+            <li>
+              <a href="https://github.com/ArshdeepGrover/ai-tools-manager/issues" target="_blank"
+                class="hover:text-white transition-colors">Report Issues</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -1897,28 +1681,43 @@
 
         <div class="text-center text-gray-400">
           <p>
-            &copy; <span id="current-year">2025</span> AI Tools Hub. Open source project by Arshdeep Singh.
+            &copy; 2025 AI Tools Hub. Open source project by Arshdeep Singh.
             MIT License.
           </p>
         </div>
       </div>
     </div>
     <!-- Back to Top Button -->
-    <button id="backToTopBtn" aria-label="Back to Top"><i class="fas fa-chevron-up"></i></button>
+    <button id="backToTopBtn" aria-label="Back to Top">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+
+
   </footer>
 
   <!-- Status Widget -->
-  <div id="status-widget" class="fixed bottom-4 left-4 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 p-3 z-40 transition-all duration-300" style="background-color: var(--card-bg); border-color: var(--border-color);">
+  <div id="status-widget"
+    class="fixed bottom-4 left-4 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 p-3 z-40 transition-all duration-300"
+    style="background-color: var(--card-bg); border-color: var(--border-color);">
     <div class="flex items-center gap-3 text-sm">
       <div class="flex items-center gap-2">
         <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse" id="status-dot"></div>
         <span style="color: var(--text-secondary);" id="status-text">Online</span>
       </div>
       <div class="text-xs" style="color: var(--text-tertiary);" id="tools-count">Loading...</div>
+      <button id="pwa-install-btn"
+        class="hidden w-6 h-6 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all duration-300 flex items-center justify-center text-xs relative group"
+        title="Install App">
+        <i class="fas fa-download"></i>
+        <div
+          class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-gray-900 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+          Install App
+        </div>
+      </button>
     </div>
   </div>
 
   <script src="script.js"></script>
-  <script src="animations.js"></script>
 </body>
+
 </html>

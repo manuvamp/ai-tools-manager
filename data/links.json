@@ -25,11 +25,6 @@
           "description": "AI-powered workspace with free trial"
         },
         {
-          "title": "Remio",
-          "url": "https://remio.ai/",
-          "description": "Local-first AI memory and knowledge base app that parses files, webpages, recordings, emails, messages, images, and notes into local indexes and vectors for faster personal context retrieval."
-        },
-        {
           "title": "QuillBot",
           "url": "https://quillbot.com/",
           "description": "Free paraphrasing, grammar checking, summarizer"
@@ -156,11 +151,6 @@
           "description": "Free design tool with AI features"
         },
         {
-          "title": "Image Describer",
-          "url": "https://imagedescriber.dev",
-          "description": "Free AI image descriptions, alt text, OCR, and prompts"
-        },
-        {
           "title": "DALL-E 2",
           "url": "https://openai.com/dall-e-2",
           "description": "AI image generator with free credits"
@@ -174,16 +164,6 @@
           "title": "Remove.bg",
           "url": "https://remove.bg",
           "description": "Free AI background remover"
-        },
-        {
-          "title": "ClearCrowds",
-          "url": "https://www.clearcrowds.com",
-          "description": "AI photo cleanup and editing tool for removing crowds, objects, text, clutter, and other distractions from images."
-        },
-        {
-          "title": "Outfit Swap Studio",
-          "url": "https://outfitswapstudio.com",
-          "description": "AI virtual try-on and outfit swap for your photos; preserves face, pose, and background."
         },
         {
           "title": "Banani.co",
@@ -213,7 +193,7 @@
         {
           "title": "Pixlr",
           "url": "https://pixlr.com/",
-          "description": "Edit photos, generate images, and design freely with Pixlr's powerful AI tools."
+          "description": "Edit photos, generate images, and design freely with Pixlr’s powerful AI tools."
         },
         {
           "title": "Stitch",
@@ -271,7 +251,7 @@
           "description": "An AI Design Agent that turns your text prompts into full brand visuals, videos, and design assets — acting like a one-person design team in your browser."
         },
         {
-          "title": "Let's Enhance",
+          "title": "Let’s Enhance",
           "url": "https://letsenhance.io",
           "description": "Upscale images, improve resolution, enhance lighting & tone using AI, especially for low quality photos."
         },
@@ -279,36 +259,6 @@
           "title": "DeepAI",
           "url": "https://deepai.org/",
           "description": "Multipurpose Chatbot with features like Video/Image/Music Generation, Image Editor, and much more."
-        },
-        {
-          "title": "Aurcue",
-          "url": "https://www.aurcue.com",
-          "description": "AI personal aesthetic assistant for color analysis, outfit upgrades, hairstyles, glasses, and daily style decisions from a photo."
-        },
-        {
-          "title": "igly.ai",
-          "url": "https://igly.ai",
-          "description": "Free AI image editor for background removal, inpainting, upscaling, generative fill, and product photo workflows."
-        },
-        {
-          "title": "ArtImageHub",
-          "url": "https://artimagehub.com/old-photo-restoration",
-          "description": "AI old photo restoration that repairs scratches, fading, and blur and colorizes black-and-white family photos."
-        },
-        {
-          "title": "Catoon",
-          "url": "https://catoon.xyz",
-          "description": "Turn long stories into editable AI comic chapters."
-        },
-        {
-          "title": "Lunalisa",
-          "url": "https://luna-lisa.art",
-          "description": "Free credits. AI product photos, posters, image-to-video."
-        },
-        {
-          "title": "PhotoGenerAI",
-          "url": "https://photogenerai.com",
-          "description": "Free AI photo generator and editor, no sign-up needed"
         }
       ]
     },
@@ -367,11 +317,6 @@
       "name": "AI Coding & Development",
       "icon": "💻",
       "links": [
-        {
-          "title": "Agent QA",
-          "url": "https://vostride.com/docs/agent-qa",
-          "description": "AI web/mobile QA; FSL-1.1-ALv2; model costs separate"
-        },
         {
           "title": "GitHub Copilot",
           "url": "https://github.com/features/copilot",
@@ -463,31 +408,6 @@
           "description": "AI-first code editor with free features for real-time coding assistance"
         },
         {
-          "title": "codex-profiles",
-          "url": "https://github.com/Ducksss/codex-profiles",
-          "description": "Manage named Codex and ChatGPT profiles"
-        },
-        {
-          "title": "AI Badger",
-          "url": "https://github.com/PVRLabs/aibadger",
-          "description": "Extract focused repo context locally for any AI chat"
-        },
-        {
-          "title": "Markstream",
-          "url": "https://markstream.simonhe.me/",
-          "description": "Streaming Markdown renderer for AI chat interfaces"
-        },
-        {
-          "title": "Better Agent",
-          "url": "https://github.com/ofekron/better-agent",
-          "description": "Orchestrate native coding-agent sessions locally"
-        },
-        {
-          "title": "YYLO",
-          "url": "https://github.com/yylo-dev/yylo",
-          "description": "Command-line orchestrator for coding agents"
-        },
-        {
           "title": "Aider",
           "url": "https://aider.chat/",
           "description": "AI pair programming in your terminal"
@@ -521,61 +441,6 @@
           "title": "HackerAI",
           "url": "https://hackerai.co/",
           "description": "AI penetration testing assistant designed to assist with tasks like vulnerability analysis, ethical hacking techniques, and security research."
-        },
-        {
-          "title": "CoderPlan",
-          "url": "https://coderplan.ai",
-          "description": "Unified LLM API gateway for Claude Code, Codex CLI, Cursor, and Cline with OpenAI-compatible endpoint"
-        },
-        {
-          "title": "Xquik",
-          "url": "https://xquik.com",
-          "description": "X data API with free MCP compose and radar tools"
-        },
-        {
-          "title": "agentguard",
-          "url": "https://github.com/alvabillwu/agentguard",
-          "description": "AI-powered shell command safety gate that validates CLI commands before execution"
-        },
-        {
-          "title": "ctxpack",
-          "url": "https://github.com/alvabillwu/ctxpack",
-          "description": "Context window packer that optimizes prompts for maximum token efficiency"
-        },
-        {
-          "title": "judgekit",
-          "url": "https://github.com/alvabillwu/judgekit",
-          "description": "LLM-as-judge evaluation harness for testing and comparing model outputs"
-        },
-        {
-          "title": "mcp-guard",
-          "url": "https://github.com/alvabillwu/mcp-guard",
-          "description": "Security scanner for MCP servers that detects vulnerabilities and misconfigurations"
-        },
-        {
-          "title": "ragbench",
-          "url": "https://github.com/alvabillwu/ragbench",
-          "description": "Benchmarking toolkit for evaluating RAG pipeline performance"
-        },
-        {
-          "title": "tokencost",
-          "url": "https://github.com/alvabillwu/tokencost",
-          "description": "LLM token usage and cost calculator for OpenAI and Anthropic models"
-        },
-        {
-          "title": "SEMAPRAX",
-          "url": "https://wavect.io/semaprax/",
-          "description": "Pre-alpha language and compiler for semantic agent edits"
-        },
-        {
-          "title": "Agent Coordinator",
-          "url": "https://github.com/alanhoff/agent-coordinator",
-          "description": "Bounded Codex work graphs with resumable local state"
-        },
-        {
-          "title": "OrcaReplay",
-          "url": "https://github.com/Continuum-AI-Corp/OrcaReplay",
-          "description": "Record, diff and replay AI agent runs from local traces"
         }
       ]
     },
@@ -597,11 +462,6 @@
           "title": "ElevenLabs",
           "url": "https://elevenlabs.io",
           "description": "AI voice generator with free credits"
-        },
-        {
-          "title": "PVID",
-          "url": "http://pvid.app/",
-          "description": "Free AI video generator aggregating Kling 3.0, Sora 2, Veo 3.1 with 100 free credits"
         },
         {
           "title": "Runway ML",
@@ -692,11 +552,6 @@
           "title": "OpusClip",
           "url": "https://www.opus.pro/",
           "description": "AI tool for clipping long videos into social media shorts. 90 minutes/month on free plan."
-        },
-        {
-          "title": "ImagineClip",
-          "url": "https://imagineclip.com",
-          "description": "AI video generator for avatar clips, stylized scenes, and social-ready videos from prompts, images, and effects."
         }
       ]
     },
@@ -708,11 +563,6 @@
           "title": "Otter.ai",
           "url": "https://otter.ai",
           "description": "Free AI meeting transcription"
-        },
-        {
-          "title": "Orkas",
-          "url": "https://github.com/Orkas-AI/Orkas",
-          "description": "Open-source, local-first desktop AI workforce that turns goals into plans and coordinates specialist agents through one chat."
         },
         {
           "title": "Calendly AI",
@@ -730,11 +580,6 @@
           "description": "Free AI search & research assistant"
         },
         {
-          "title": "AI Tools Radar",
-          "url": "https://aitoolsradar.com",
-          "description": "AI tools directory with daily AI industry news and product discovery"
-        },
-        {
           "title": "NotebookLM",
           "url": "https://notebooklm.google.com",
           "description": "Google's AI research & note-taking tool"
@@ -745,11 +590,6 @@
           "description": "AI data analysis and visualization tool"
         },
         {
-          "title": "FPVTune",
-          "url": "https://fpvtune.com/",
-          "description": "Betaflight log analysis and PID/filter tuning suggestions"
-        },
-        {
           "title": "Genspark AI",
           "url": "https://genspark.ai",
           "description": "AI-powered search and research assistant"
@@ -758,11 +598,6 @@
           "title": "Taskade",
           "url": "https://taskade.com/",
           "description": "AI to-do lists, outlines, and workflows"
-        },
-        {
-          "title": "Tudo",
-          "url": "https://blynkai.app/tudo/",
-          "description": "AI task capture and personal planning app for turning quick thoughts into organized next actions"
         },
         {
           "title": "Tango",
@@ -798,11 +633,6 @@
           "title": "Fireflies.ai",
           "url": "https://fireflies.ai/",
           "description": "An AI meeting assistant that joins your calls to record, transcribe, summarize, and analyze voice conversations."
-        },
-        {
-          "title": "HyNote",
-          "url": "https://hynote.ai?utm_source=ai-tool-collection&utm_medium=referral&utm_campaign=ai-tools-manager",
-          "description": "AI note taker for meetings, audio & PDF summaries"
         },
         {
           "title": "Motion",
@@ -858,36 +688,6 @@
           "title": "Explainpaper",
           "url": "https://www.explainpaper.com",
           "description": "Highlight text to get instant plain-language explanations."
-        },
-        {
-          "title": "ZeroGTM",
-          "url": "https://www.gtm-zero.com",
-          "description": "Open-source AI SDR agent for sales outreach"
-        },
-        {
-          "title": "IdeaTwister",
-          "url": "https://ideatwister.com",
-          "description": "Locally-run AI engine that turns one rough business idea into 50+ scored variations across 15 strategic angles. Built for solo founders."
-        },
-        {
-          "title": "CallURL",
-          "url": "https://callurl.com",
-          "description": "Build a free Call App in 60 seconds, then share it by link or QR to handle calls."
-        },
-        {
-          "title": "Memex",
-          "url": "https://www.memexlab.ai/",
-          "description": "Private AI journal for searchable life memories"
-        },
-        {
-          "title": "IdeaHunter",
-          "url": "https://ideahunter.today",
-          "description": "AI startup idea research for solo founders"
-        },
-        {
-          "title": "Hermes Startup",
-          "url": "https://hermesstartup.com",
-          "description": "Free: 10 questions, 10 proven ideas via Hermes Agent"
         }
       ]
     },
@@ -914,16 +714,6 @@
           "title": "Infinite Craft",
           "url": "https://neal.fun/infinite-craft/",
           "description": "Infinite Craft is an AI-powered game where you start with four basic elements and combine them to discover a virtually endless universe of creations."
-        },
-        {
-          "title": "Auferet",
-          "url": "https://auferet.com",
-          "description": "AI game master for solo text adventures and tabletop RPGs, with long-term story memory and uploadable lore"
-        },
-        {
-          "title": "Fortuneteller.Today",
-          "url": "https://www.fortuneteller.today",
-          "description": "AI tarot, astrology, BaZi, numerology, and rune readings."
         }
       ]
     },
@@ -971,11 +761,6 @@
           "title": "Rosebud AI",
           "url": "https://lab.rosebud.ai/ai-game-creator",
           "description": "An AI tool which help you create simple 2D games by generating game assets, levels, and mechanics based on your ideas."
-        },
-        {
-          "title": "Roblox GUI Maker",
-          "url": "https://robloxguimaker.dev/",
-          "description": "Generate Roblox Studio GUI layouts and Lua code"
         }
       ]
     },
