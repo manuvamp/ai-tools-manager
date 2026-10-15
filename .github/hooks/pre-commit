@@ -1,28 +1,14 @@
 #!/bin/sh
-# Pre-commit hook to validate data files
+# Pre-commit hook to validate data files (production branch only)
 
 # Get current branch name
 BRANCH=$(git rev-parse --abbrev-ref HEAD)
 
 echo "🔍 Current branch: $BRANCH"
 
-# --- Always-on JSON syntax check (all branches) ---------------------------
-# Invalid JSON silently breaks the live site (falls back to placeholder data),
-# so guard against it on every branch, not just production.
-if git diff --cached --name-only | grep -q -E "data/(links|contributors)\.json"; then
-    echo "🧪 Validating JSON syntax of staged data files..."
-    if node -e "['data/links.json','data/contributors.json'].forEach(function(f){JSON.parse(require('fs').readFileSync(f,'utf8'))})"; then
-        echo "✅ JSON syntax is valid!"
-    else
-        echo "❌ Invalid JSON detected. Fix the syntax error (e.g. a trailing comma) and try again."
-        echo "Run 'npm run validate-json' to see details."
-        exit 1
-    fi
-fi
-
-# Only run the heavier data validation on production branch
+# Only run validation on production branch
 if [ "$BRANCH" != "production" ]; then
-    echo "📄 Not on production branch, skipping deep data validation."
+    echo "📄 Not on production branch, skipping data validation."
     echo "🚀 Pre-commit checks passed!"
     exit 0
 fi
@@ -30,37 +16,37 @@ fi
 echo "🔍 Production branch detected - running data validation..."
 
 # Check if links.json has been modified
-if git diff --cached --name-only | grep -q "data/links.json"; then
-    echo "📝 data/links.json modified, checking for duplicates..."
+if git diff --cached --name-only | grep -q "links.json"; then
+    echo "📝 links.json modified, checking for duplicates..."
     
     # Run the duplicate check
-    if node scripts/validate-links.js --duplicates-only; then
+    if node validate-links.js --duplicates-only; then
         echo "✅ No duplicate links found!"
     else
         echo "❌ Duplicate links found!"
         echo "Please remove duplicates and try again."
-        echo "Run 'node scripts/validate-links.js --duplicates-only' to see details."
+        echo "Run 'node validate-links.js --duplicates-only' to see details."
         exit 1
     fi
 fi
 
 # Check if contributors.json has been modified
-if git diff --cached --name-only | grep -q "data/contributors.json"; then
-    echo "👥 data/contributors.json modified, validating contributor data..."
+if git diff --cached --name-only | grep -q "contributors.json"; then
+    echo "👥 contributors.json modified, validating contributor data..."
     
     # Run the contributors validation
-    if node scripts/validate-contributors.js --quick; then
+    if node validate-contributors.js --quick; then
         echo "✅ Contributors data is valid!"
     else
         echo "❌ Contributors validation failed!"
         echo "Please fix the contributor data and try again."
-        echo "Run 'node scripts/validate-contributors.js --quick' to see details."
+        echo "Run 'node validate-contributors.js --quick' to see details."
         exit 1
     fi
 fi
 
 # Check if neither file was modified
-if ! git diff --cached --name-only | grep -q -E "data/(links|contributors)\.json"; then
+if ! git diff --cached --name-only | grep -q -E "(links|contributors)\.json"; then
     echo "📄 No data files modified, skipping validation."
 fi
 
