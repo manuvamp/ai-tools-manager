@@ -41,7 +41,7 @@ async function validateLinks() {
   console.log("🔍 AI Tools Links Validation");
   console.log("=".repeat(50));
 
-  const data = JSON.parse(fs.readFileSync("data/links.json", "utf8"));
+  const data = JSON.parse(fs.readFileSync("links.json", "utf8"));
   const allTitles = new Map();
   const allUrls = new Map();
   let hasError = false;
@@ -162,7 +162,7 @@ async function validateLinks() {
 function checkDuplicatesOnly() {
   console.log("🔍 Checking for duplicate links only...\n");
 
-  const data = JSON.parse(fs.readFileSync("data/links.json", "utf8"));
+  const data = JSON.parse(fs.readFileSync("links.json", "utf8"));
   const allTitles = new Map();
   const allUrls = new Map();
   let hasError = false;
@@ -215,14 +215,9 @@ function checkDuplicatesOnly() {
 if (require.main === module) {
   // Check command line arguments
   const args = process.argv.slice(2);
-  try {
-    if (args.includes("--duplicates-only")) {
-      checkDuplicatesOnly();
-    } else {
-      validateLinks();
-    }
-  } catch (err) {
-    console.error("\n❌ Script error:", err && err.stack ? err.stack : err);
-    process.exit(1);
+  if (args.includes("--duplicates-only")) {
+    checkDuplicatesOnly();
+  } else {
+    validateLinks();
   }
 }
