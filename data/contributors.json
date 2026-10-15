@@ -694,6 +694,17 @@
         "Added OrcaReplay to AI Coding & Development"
       ],
       "role": "Contributor"
+    },
+    {
+      "name": "Manu Parasuraman",
+      "github": "manuvamp",
+      "avatar": "https://github.com/manuvamp.png",
+      "tagline": "ORANO maker",
+      "contributions": [
+        "Added ORANO to AI Productivity"
+      ],
+      "website": "https://oranoai.com",
+      "role": "Contributor"
     }
   ]
 }
